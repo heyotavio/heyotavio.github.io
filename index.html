@@ -12,7 +12,7 @@
             <div class="logo">Otts</div>
             <ul>
                 <li class="dropdown">
-                    <a href="#sobre">Sobre</a>
+                    <a href="#Sobremim">Sobre</a>
                     <ul class="dropdown-menu">
                         <li><a href="#Sobremim">Sobre mim</a></li>
                         <li><a href="#FormacaoAcademica">Formação Acadêmica</a></li>
@@ -33,25 +33,33 @@
             </div>
 
             <div class="hero-content">
-                <h1>Olá, eu sou o Otavio Araujo</h1>
-                <p>Analytics Engineer & Entusiasta de Tecnologia</p>
+                <h1><span class="greeting">Olá, sou</span><br><span class="name-highlight">Otavio Araujo</span></h1>
+                <p class="role"><span class="typing" data-text="Analytics Engineer" aria-label="Analytics Engineer"></span></p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                 <!-- <a href="#projetos" class="btn">Ver Meus Projetos</a> -->
             </div>
         </div>
         <div class="scroll-down">
-            <a href="#projetos" class="scroll-link">
+            <a href="#Sobremim" class="scroll-link">
                 <p>Sobre mim</p>
                 <div class="arrow">↓</div>
             </a>
         </div>
     </section>
 
-    <section id="Sobremim">
+    <section id="Sobremim" class="content-section">
+        <div class="section-header-link">
+            <a href="#hero" class="arrow-link arrow-up" data-section-target="hero">↑ Página principal</a>
+        </div>
+        <div class="page-label">Sobre mim</div>
         <h2>Sobre mim</h2>
         <p>Aqui você pode adicionar informações sobre você, sua história e sua paixão por tecnologia.</p>
+        <div class="section-footer-link">
+            <a href="#FormacaoAcademica" class="arrow-link arrow-down" data-section-target="FormacaoAcademica">Formação acadêmica ↓</a>
+        </div>
     </section>
 
-    <section id="FormacaoAcademica">
+    <section id="FormacaoAcademica" class="content-section">
         <h2>Formação Acadêmica</h2>
         <div class="formacao-container">
             <div class="formacao-item">
@@ -62,7 +70,7 @@
         </div>
     </section>
 
-    <section id="ExperienciaProfissional">
+    <section id="ExperienciaProfissional" class="content-section">
         <h2>Experiência Profissional</h2>
         <div class="experiencia-container">
             <div class="experiencia-item">
@@ -72,8 +80,8 @@
             </div>
         </div>
     </section>
-
-    <section id="Certificados">
+    
+    <section id="Certificados" class="content-section">
         <h2>Certificados</h2>
         <div class="certificados-container">
             <div class="certificado-item">
@@ -83,7 +91,7 @@
         </div>
     </section>
 
-    <section id="projetos">
+    <section id="projetos" class="content-section">
         <h2>Meus Projetos</h2>
         <div class="grid-projetos">
             <div class="card">
@@ -99,8 +107,117 @@
         </div>
     </section>
 
+    <section id="contato" class="content-section">
+        <h2>Contato</h2>
+        <div class="card">
+            <p>Se quiser conversar sobre oportunidades, projetos ou aprendizados, fique à vontade para me mandar uma mensagem.</p>
+            <p>Email: <a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">Seu Perfil</a></p>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 - Criado com ❤️ por [Seu Nome]</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingElement = document.querySelector('.typing');
+            const text = typingElement.dataset.text || 'Analytics Engineer';
+            const typingSpeed = 120;
+            const deletingSpeed = 80;
+            const pauseAfterTyping = 3000;
+            const pauseAfterDeleting = 1000;
+            let index = 0;
+            let isDeleting = false;
+
+            typingElement.textContent = '';
+
+            function updateText() {
+                const currentText = text.slice(0, index);
+                typingElement.textContent = currentText;
+
+                if (!isDeleting && index < text.length) {
+                    index += 1;
+                    setTimeout(updateText, typingSpeed);
+                } else if (!isDeleting && index === text.length) {
+                    isDeleting = true;
+                    setTimeout(updateText, pauseAfterTyping);
+                } else if (isDeleting && index > 0) {
+                    index -= 1;
+                    setTimeout(updateText, deletingSpeed);
+                } else if (isDeleting && index === 0) {
+                    isDeleting = false;
+                    setTimeout(updateText, pauseAfterDeleting);
+                }
+            }
+
+            updateText();
+
+            const heroSection = document.getElementById('hero');
+            const contentSections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            let currentSection = 'hero';
+
+            function setSectionVisibility(sectionId) {
+                contentSections.forEach(section => {
+                    const active = section.id === sectionId;
+                    section.classList.toggle('active', active);
+                    section.style.display = active ? 'block' : 'none';
+                });
+            }
+
+            function showSection(sectionId) {
+                const section = document.getElementById(sectionId);
+
+                if (sectionId === 'hero' || sectionId === '') {
+                    heroSection.style.display = 'block';
+                    requestAnimationFrame(() => {
+                        heroSection.classList.remove('hidden');
+                    });
+                    document.body.classList.remove('show-about');
+                    setSectionVisibility('');
+                    currentSection = 'hero';
+                    return;
+                }
+
+                if (!section) {
+                    return;
+                }
+
+                if (currentSection === 'hero') {
+                    heroSection.classList.add('hidden');
+                    setTimeout(() => {
+                        heroSection.style.display = 'none';
+                    }, 850);
+                }
+
+                setSectionVisibility(sectionId);
+                document.body.classList.add('show-about');
+                currentSection = sectionId;
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    const targetId = this.getAttribute('href').slice(1);
+                    if (!targetId) {
+                        return;
+                    }
+                    event.preventDefault();
+                    showSection(targetId);
+                });
+            });
+
+            const initialHash = window.location.hash.slice(1);
+            if (initialHash) {
+                showSection(initialHash);
+            }
+
+            window.addEventListener('wheel', function(event) {
+                if (event.deltaY > 50 && currentSection === 'hero') {
+                    showSection('Sobremim');
+                }
+            }, { passive: true });
+        });
+    </script>
 </body>
 </html>
