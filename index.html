@@ -5,120 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otavio Araujo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="otavio-aba.png">
 </head>
 <body>
-    <header>
+    <header id="navbar">
         <nav>
             <div class="logo">Otts</div>
             <ul>
-                <li class="dropdown">
-                    <a href="#Sobremim">Sobre</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#Sobremim">Sobre mim</a></li>
-                        <li><a href="#FormacaoAcademica">Formação Acadêmica</a></li>
-                        <li><a href="#ExperienciaProfissional">Experiência Profissional</a></li>
-                        <li><a href="#Certificados">Certificados</a></li>
-                    </ul>
-                </li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#Sobremim" class="nav-link">Sobre mim</a></li>
+                <li><a href="#FormacaoAcademica" class="nav-link">Formação</a></li>
+                <li><a href="#ExperienciaProfissional" class="nav-link">Experiência</a></li>
+                <li><a href="#Habilidades" class="nav-link">Habilidades</a></li> <!-- NOVA ABA -->
+                <li><a href="#Certificados" class="nav-link">Certificados</a></li>
+                <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="hero">
+        <!-- Ícones animados flutuando no fundo -->
+        <div class="absolute text-3xl md:text-4xl opacity-35 hidden md:block" style="left: 10%; top: 20%; transform: translateY(-12.2889px) rotate(-9.55253deg);">💻</div>
+        <div class="absolute text-3xl md:text-4xl opacity-35 hidden md:block" style="left: 80%; top: 15%; transform: translateY(-17.065px) rotate(-9.59824deg);">🤖</div>
+        <div class="absolute text-3xl md:text-4xl opacity-35 hidden md:block" style="left: 15%; top: 70%; transform: translateY(-19.6117px) rotate(-4.856deg);">🧠</div>
+        <div class="absolute text-3xl md:text-4xl opacity-35 hidden md:block" style="left: 85%; top: 65%; transform: translateY(-19.8225px) rotate(3.38889deg);">🔐</div>
+        <div class="absolute text-3xl md:text-4xl opacity-35 hidden md:block" style="left: 5%; top: 45%; transform: translateY(-17.7495px) rotate(9.10505deg);">📊</div>
+        <div class="absolute text-3xl md:text-4xl opacity-35 hidden md:block" style="left: 90%; top: 40%; transform: translateY(-13.3472px) rotate(9.79912deg);">⚡</div>
+        <div class="absolute text-3xl md:text-4xl opacity-35 hidden md:block" style="left: 50%; top: 10%; transform: translateY(-7.71106px) rotate(7.428deg);">📡</div>
+        <div class="absolute text-3xl md:text-4xl opacity-35 hidden md:block" style="left: 45%; top: 85%; transform: translateY(-2.93495px) rotate(3.30556deg);">🛡️</div>
+
         <div class="hero-container">
             <div class="hero-image">
                 <img src="otavio-araujo2.png" alt="Foto de Otavio Araujo">
             </div>
 
             <div class="hero-content">
-                <h1><span class="greeting">Olá, sou</span><br><span class="name-highlight">Otavio Araujo</span></h1>
-                <p class="role"><span class="typing" data-text="Analytics Engineer" aria-label="Analytics Engineer"></span></p>
-                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                <!-- <a href="#projetos" class="btn">Ver Meus Projetos</a> -->
+                <span class="intro-text">Olá, sou</span>
+                <h1 class="gradient-name">Otavio Araujo</h1>
+                
+                <!-- Ajustado com a classe .typing e data-text que seu script precisa -->
+                <div class="typing-container">
+                    <span class="typing" data-text="Analytics Engineer">Analytics Engineer</span><span class="cursor-blink">|</span>
+                </div>
+
+                <p class="lorem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
             </div>
         </div>
-        <div class="scroll-down">
-            <a href="#Sobremim" class="scroll-link">
-                <p>Sobre mim</p>
-                <div class="arrow">↓</div>
-            </a>
+
+    </section>
+
+    <!-- As seções abaixo agora contam com a classe .content-section exigida pelo script para controle de visibilidade -->
+    <section id="Sobremim" class="content-section secao-escura-azul">
+        <div class="container-secao">
+            <h2>Sobre mim</h2>
+            <p>Sou um Analytics Engineer com sólida experiência em Business Intelligence, governança de dados e Data Viz. Tenho atuado fortemente na administração e sustentação de ambientes de dados (como Power BI e bancos SQL Server), focando na criação de soluções eficientes e na disseminação da cultura Data Driven. Minha trajetória une a precisão técnica e a visão de negócios para extrair insights estratégicos, construir pipelines robustos e otimizar o processo de tomada de decisão, sempre guiado pelas melhores práticas do mercado.</p>
         </div>
     </section>
 
-    <section id="Sobremim" class="content-section">
-        <div class="section-header-link">
-            <a href="#hero" class="arrow-link arrow-up" data-section-target="hero">↑ Página principal</a>
-        </div>
-        <div class="page-label">Sobre mim</div>
-        <h2>Sobre mim</h2>
-        <p>Aqui você pode adicionar informações sobre você, sua história e sua paixão por tecnologia.</p>
-        <div class="section-footer-link">
-            <a href="#FormacaoAcademica" class="arrow-link arrow-down" data-section-target="FormacaoAcademica">Formação acadêmica ↓</a>
-        </div>
-    </section>
-
-    <section id="FormacaoAcademica" class="content-section">
-        <h2>Formação Acadêmica</h2>
-        <div class="formacao-container">
-            <div class="formacao-item">
-                <h3>Seu Curso</h3>
-                <p>Instituição - Ano de Conclusão</p>
-                <p>Descrição do curso e principais aprendizados.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="ExperienciaProfissional" class="content-section">
-        <h2>Experiência Profissional</h2>
-        <div class="experiencia-container">
-            <div class="experiencia-item">
-                <h3>Seu Cargo</h3>
-                <p>Empresa - Período</p>
-                <p>Descrição das suas responsabilidades e realizações.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="Certificados" class="content-section">
-        <h2>Certificados</h2>
-        <div class="certificados-container">
-            <div class="certificado-item">
-                <h3>Nome do Certificado</h3>
-                <p>Instituição - Data</p>
+    <section id="FormacaoAcademica" class="content-section secao-escura-preta">
+        <div class="container-secao">
+            <h2>Formação Acadêmica</h2>
+            <div class="grid-projetos">
+                <div class="card">
+                    <h3>Engenharia e Arquitetura de Dados</h3>
+                    <p style="color: #3b82f6; font-weight: bold; margin-bottom: 10px;">XP Educação (2025 - 2026)</p>
+                    <p>Pós-graduação Lato Sensu focada em estruturação de projetos de dados, construção de pipelines e infraestrutura analítica.</p>
+                </div>
+                <div class="card">
+                    <h3>Marketing</h3>
+                    <p style="color: #3b82f6; font-weight: bold; margin-bottom: 10px;">Universidade Anhembi Morumbi (2020 - 2021)</p>
+                    <p>Graduação com foco no entendimento de mercado, comportamento do consumidor e análise de resultados para campanhas e funis de vendas.</p>
+                </div>
+                <div class="card">
+                    <h3>Técnico em Química</h3>
+                    <p style="color: #3b82f6; font-weight: bold; margin-bottom: 10px;">FIEB (2016 - 2018)</p>
+                    <p>Fundação Instituto de Educação de Barueri. Base técnica que desenvolveu forte capacidade analítica e raciocínio lógico.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projetos" class="content-section">
-        <h2>Meus Projetos</h2>
-        <div class="grid-projetos">
-            <div class="card">
-                <h3>Projeto 01</h3>
-                <p>Uma breve descrição do que este projeto faz e as tecnologias usadas.</p>
-                <a href="#">Ver no GitHub</a>
-            </div>
-            <div class="card">
-                <h3>Projeto 02</h3>
-                <p>Uma breve descrição do que este projeto faz e as tecnologias usadas.</p>
-                <a href="#">Ver no GitHub</a>
+    <section id="ExperienciaProfissional" class="content-section secao-escura-azul">
+        <div class="container-secao">
+            <h2>Experiência Profissional</h2>
+            <div class="grid-projetos">
+                <div class="card">
+                    <h3>Analytics Engineer</h3>
+                    <p style="color: #3b82f6; font-weight: bold; margin-bottom: 10px;">Edenred Brasil (Jun/2021 - Presente)</p>
+                    <p>Administração e sustentação do ambiente Power BI, criação de fluxos de dados, consultas complexas em SQL Server, controle de acessos (AD), publicação, documentação e treinamentos com foco na cultura Data Driven.</p>
+                </div>
+                <div class="card">
+                    <h3>Analista de Business Intelligence</h3>
+                    <p style="color: #3b82f6; font-weight: bold; margin-bottom: 10px;">Gotcha! (Jan/2021 - Jul/2021)</p>
+                    <p>Criação de dashboards dinâmicos, extração de KPIs de Google e Facebook Ads, e desenvolvimento de monitoramento de performance focados nas etapas do funil de conversão.</p>
+                </div>
+                <div class="card">
+                    <h3>Assistente Administrativo</h3>
+                    <p style="color: #3b82f6; font-weight: bold; margin-bottom: 10px;">Laureate Digital (Jan/2019 - Fev/2021)</p>
+                    <p>Geração de insights qualitativos e quantitativos, gerenciamento de KPIs, criação de dashboards de apoio à gestão, além da configuração de réguas de disparos em plataformas como RD Station e Huggy.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="content-section">
-        <h2>Contato</h2>
-        <div class="card">
-            <p>Se quiser conversar sobre oportunidades, projetos ou aprendizados, fique à vontade para me mandar uma mensagem.</p>
-            <p>Email: <a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">Seu Perfil</a></p>
+    <!-- HABILIDADES TÉCNICAS -->
+    <section id="Habilidades" class="content-section secao-escura-preta text-center">
+        <div class="container-secao">
+            <div class="badge-habilidades">Analytics • BI • Data Engineering</div>
+            <h2 class="titulo-habilidades">Habilidades <span>Técnicas</span></h2>
+            <p class="subtitulo-habilidades">Domínio de ferramentas voltadas para extração, transformação, visualização e governança de dados para a construção de soluções analíticas de alto impacto.</p>
+
+            <div class="grid-habilidades">
+                <div class="habilidade-card"><span>Power BI (DAX)</span></div>
+                <div class="habilidade-card"><span>Microsoft SQL Server</span></div>
+                <div class="habilidade-card"><span>Engenharia de Dados</span></div>
+                <div class="habilidade-card"><span>Microsoft Excel</span></div>
+                <div class="habilidade-card"><span>Governança de Dados</span></div>
+                <div class="habilidade-card"><span>Data Visualization</span></div>
+                <div class="habilidade-card"><span>HTML & CSS</span></div>
+                <div class="habilidade-card"><span>Python / Pandas</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Certificados" class="content-section secao-escura-azul">
+        <div class="container-secao">
+            <h2>Certificados</h2>
+            <div class="grid-projetos">
+                <div class="card">
+                    <h3>Microsoft SQL Server 2017</h3>
+                    <p style="color: #9ca3af;">Formação SQL</p>
+                </div>
+                <div class="card">
+                    <h3>Microsoft Power BI</h3>
+                    <p style="color: #9ca3af;">Certificação em BI & Data Viz</p>
+                </div>
+                <div class="card">
+                    <h3>Social Media</h3>
+                    <p style="color: #9ca3af;">Formação e Especialização</p>
+                </div>
+                <div class="card">
+                    <h3>Formações Complementares</h3>
+                    <p style="color: #9ca3af;">Diversos certificados na plataforma Alura</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="content-section secao-escura-azul">
+        <div class="container-secao">
+            <h2>Meus Projetos</h2>
+            <div class="grid-projetos">
+                <div class="card">
+                    <h3>Projeto 01</h3>
+                    <p>Uma breve descrição do que este projeto faz e as tecnologias usadas.</p>
+                    <a href="#">Ver no GitHub</a>
+                </div>
+                <div class="card">
+                    <h3>Projeto 02</h3>
+                    <p>Uma breve descrição do que este projeto faz e as tecnologias usadas.</p>
+                    <a href="#">Ver no GitHub</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 - Criado com ❤️ por [Seu Nome]</p>
+        <p>&copy; 2026 - Criado com ❤️ por Otavio Araujo</p>
     </footer>
+
+    <!-- Seu Script original unificado com o controle de scroll do navbar -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const typingElement = document.querySelector('.typing');
@@ -170,19 +227,18 @@
                 const section = document.getElementById(sectionId);
 
                 if (sectionId === 'hero' || sectionId === '') {
-                    heroSection.style.display = 'block';
+                    heroSection.style.display = 'flex';
                     requestAnimationFrame(() => {
                         heroSection.classList.remove('hidden');
                     });
                     document.body.classList.remove('show-about');
                     setSectionVisibility('');
                     currentSection = 'hero';
+                    updateNavbar(0);
                     return;
                 }
 
-                if (!section) {
-                    return;
-                }
+                if (!section) return;
 
                 if (currentSection === 'hero') {
                     heroSection.classList.add('hidden');
@@ -194,29 +250,53 @@
                 setSectionVisibility(sectionId);
                 document.body.classList.add('show-about');
                 currentSection = sectionId;
+                updateNavbar(100); 
             }
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    const targetId = this.getAttribute('href').slice(1);
-                    if (!targetId) {
-                        return;
-                    }
-                    event.preventDefault();
-                    showSection(targetId);
-                });
-            });
 
             const initialHash = window.location.hash.slice(1);
             if (initialHash) {
                 showSection(initialHash);
             }
 
-            window.addEventListener('wheel', function(event) {
-                if (event.deltaY > 50 && currentSection === 'hero') {
-                    showSection('Sobremim');
+            // Gerencia a estilização do navbar baseado na rolagem/seção ativa
+            function updateNavbar(yPos) {
+                const navbar = document.getElementById('navbar');
+                if (yPos > 50 || currentSection !== 'hero') {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
                 }
-            }, { passive: true });
+            }
+
+            window.addEventListener('scroll', function() {
+                updateNavbar(window.scrollY);
+            });
+        });
+    </script>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                // Detecta se a seção passou da terça parte da tela
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
